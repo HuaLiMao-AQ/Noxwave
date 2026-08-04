@@ -1,0 +1,40 @@
+# Workspace configuration
+[workspace]
+resolver = "2" # Workspace resolver version
+
+# Workspace members
+members = [
+    "crates/*",
+    "apps/*",
+]
+
+# Workspace package metadata
+[workspace.package]
+version = "0.0.1"
+edition = "2024"
+license = "MIT"
+authors = [
+    "HualiNox",
+]
+
+# dev profile
+[profile.dev]
+incremental = true
+
+# dev profile for all packages
+[profile.dev.package."*"]
+opt-level = 2
+
+# release profile
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true
+
+# Workspace dependencies
+[workspace.dependencies]
+anyhow = "1"
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+tokio = { version = "1", features = ["full"] }
