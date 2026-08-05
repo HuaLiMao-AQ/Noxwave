@@ -8,3 +8,4 @@ authors.workspace = true
 
 # Dependencies
 [dependencies]
+noxwave-ui = { path = "../../crates/noxwave-ui" }

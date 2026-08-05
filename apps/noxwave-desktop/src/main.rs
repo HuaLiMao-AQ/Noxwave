@@ -1,3 +1,4 @@
+/// The entry point for the Noxwave desktop application.
 fn main() {
-    println!("Hello, world!");
+    noxwave_ui::NoxwaveUI::run();
 }

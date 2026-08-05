@@ -1,14 +1,16 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+//! Application entry point and top-level orchestration for the Noxwave desktop UI.
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+mod pages;
+mod theme;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+use pages::Root;
+
+/// The Noxwave desktop application.
+pub struct NoxwaveUI;
+
+impl NoxwaveUI {
+    /// Starts the desktop application and opens its root window.
+    pub fn run() {
+        Root::run();
     }
 }
