@@ -1,6 +1,7 @@
 use gpui::Hsla;
 
 /// The light or dark presentation of a theme.
+
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub(crate) enum Appearance {
     Light,

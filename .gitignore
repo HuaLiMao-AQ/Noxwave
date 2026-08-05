@@ -1,1 +1,5 @@
+# Ignore build output directories
 /target
+
+# ignore Visual Studio Code settings
+.vscode

@@ -10,11 +10,25 @@ authors.workspace = true
 [dependencies]
 gpui = {
     git = "https://github.com/zed-industries/zed",
-    tag = "v1.13.2"
+    tag = "v1.13.2",
 }
 
+[target.'cfg(target_os = "linux")'.dependencies]
 gpui_platform = {
     git = "https://github.com/zed-industries/zed",
-    features = ["font-kit"],
-    tag = "v1.13.2"
+    tag = "v1.13.2",
+    features = [
+        "font-kit",
+        "wayland",
+        "x11"
+    ]
+}
+
+[target.'cfg(not(target_os = "linux"))'.dependencies]
+gpui_platform = {
+    git = "https://github.com/zed-industries/zed",
+    tag = "v1.13.2",
+    features = [
+        "font-kit"
+    ]
 }
